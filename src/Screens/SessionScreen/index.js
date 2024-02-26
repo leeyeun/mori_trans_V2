@@ -20,7 +20,7 @@ import RtcEngine, {
 } from 'react-native-agora'
 import styles from './style'
 import { useIntl } from 'react-intl'
-import CallState from '@remobile/react-native-call-state'
+// import CallState from '@remobile/react-native-call-state'
 import Header from '../../Components/headers'
 import List from './list'
 import Sound from './sound'
@@ -86,12 +86,12 @@ function SessionScreen ({ navigation, route }) {
     }
 
     initEngine()
-    if (Platform.OS === 'android') CallState.startListener()
-    _device = DeviceEventEmitter.addListener('callStateUpdated', data => {
-      if (data) {
-        callcheck(data.state)
-      }
-    })
+    // if (Platform.OS === 'android') CallState.startListener()
+    // _device = DeviceEventEmitter.addListener('callStateUpdated', data => {
+    //   if (data) {
+    //     callcheck(data.state)
+    //   }
+    // })
 
     getSessionDetail()
     return () => {
@@ -100,7 +100,7 @@ function SessionScreen ({ navigation, route }) {
       }
       agoraRemove()
       _engine?.destroy()
-      if (Platform.OS === 'android') CallState.stopListener()
+      // if (Platform.OS === 'android') CallState.stopListener()
     };
   }, [])
   //수정해야 될 부분 20211119 인터벌 처리
