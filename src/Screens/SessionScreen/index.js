@@ -94,15 +94,18 @@ function SessionScreen ({ navigation, route }) {
     // })
 
     getSessionDetail()
-    return () => {
-      async function agoraRemove () {
-        await stop()
-      }
-      agoraRemove()
-      _engine?.destroy()
-      // if (Platform.OS === 'android') CallState.stopListener()
-    };
+    // return () => {
+    //   async function agoraRemove () {
+    //     await stop()
+    //   }
+    //   agoraRemove()
+    //   _engine?.destroy()
+    //   if (Platform.OS === 'android') CallState.stopListener()
+    // };
   }, [])
+
+
+  
   //수정해야 될 부분 20211119 인터벌 처리
   // async function check2() {
   //   const formdata = new FormData();

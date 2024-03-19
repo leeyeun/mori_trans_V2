@@ -70,7 +70,10 @@ function SessionList ({
       formdata.append('set_lang', lang)
       formdata.append('session_code', session_code)
       formdata.append('app_token', apptoken)
+
+
       const result = await post('/api/trans_session_start.php', formdata)
+      console.log('result' , result);
       if (result.result == 'false') {
         setisLoading(false)
         console.log(result)

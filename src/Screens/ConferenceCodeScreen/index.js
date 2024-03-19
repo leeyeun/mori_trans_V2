@@ -47,12 +47,14 @@ function ConferenceCodeScreen ({ navigation }) {
     }
     getFcmToken()
   }, [])
+
   const onPressSession = async () => {
     Keyboard.dismiss()
     const formdata = new FormData()
     formdata.append('set_lang', lang)
     formdata.append('session_code', code)
-    const result = await post('/api/trans_session_code_in.php', formdata)
+    console.log('lang',lang,'session_code ??? ' , code);
+    const result = await post('/api/trans_session_code_in.php', formdata).catch(err => console.log('err' ,err))
     if (result.result == 'false') {
       setErrmsg(result.msg)
       setErrmsgCheck(true)

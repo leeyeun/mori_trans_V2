@@ -134,8 +134,8 @@ android {
         applicationId "com.mori.translate.aos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "1.4"
+        versionCode 12
+        versionName "1.5"
         multiDexEnabled true
     }
     splits {
@@ -197,7 +197,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.4.0')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation project(':react-native-call-state')
      implementation 'io.agora.rtc:full-sdk:3.5.2'
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
